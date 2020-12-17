@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie-edge">
+	<title>Pokémon</title>
+	<link rel="stylesheet" type="text/css" href="estilos.css">
+</head>
+<body>
+	<h1 class="title">Pokémon</h1>
+
+	<input type="text" id="caja" placeholder="Ingrese un pokémon">
+
+	<button class="button">Buscar</button>
+
+
+	<div class="pokemon-list" id="listaPokemon">
+		<div class="pokemon" id="pokemon">
+			<img src="" alt="">
+			<p class="nombre"></p>
+		</div>
+	</div>
+
+
+	<script>
+		
+
+	let lista = document.getElementById("listaPokemon")
+	let caja = document.getElementById("caja").value
+		
+	let boton = document.getElementById("button")
+
+	function consultarPokemon(){
+
+		fetch(`https://pokeapi.co/api/v2/pokemon/${caja}`)
+		.then(function (response){
+			response.json()
+			.then(function (pokemon){
+				crearPokemon(pokemon)
+			})
+		})
+	}
+
+	function crearPokemon(pokemon){
+		let item = lista.querySelector("#pokemon")
+
+		let imagen = item.getElementsByTagName("img")[0]
+
+		imagen.setAttribute("src", pokemon.sprites.front_default)
+
+		let nombre = item.getElementsByTagName("p")[0]
+		nombre.textContent = pokemon.name
+	}
+
+	boton.addEventListener('click', ()=>{
+		consultarPokemon()
+	})
+
+	</script>
+</body>
+</html>
