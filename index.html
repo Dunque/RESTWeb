@@ -19,54 +19,45 @@
 	<link rel="stylesheet" type="text/css" href="estilos.css">
 </head>
 <body>
-	<h1 class="title">Pokémon</h1>
 
-	<input type="text" id="caja" placeholder="Ingrese un pokémon">
-
-	<button class="button">Buscar</button>
-
-
-	<div class="pokemon-list" id="listaPokemon">
-		<div class="pokemon" id="pokemon">
-			<img src="" alt="">
-			<p class="nombre"></p>
-		</div>
+	</div>
+		<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/500px-International_Pok%C3%A9mon_logo.svg.png" class="logo" alt="">
+		<div class="contenedor">
+		    <input type="text" id="caja" placeholder="Ingrese un pokemon">
+		    <button class="button" id="button">Buscar</button>
+		    <img src="" id="img" class="pokemon" alt="">
+		    <p id="info" class="text-white"></p>
 	</div>
 
 
 	<script>
 		
 
-	let lista = document.getElementById("listaPokemon")
-	let caja = document.getElementById("caja").value
-		
-	let boton = document.getElementById("button")
+		let buton = document.getElementById('button')
 
-	function consultarPokemon(){
+        buton.addEventListener('click',()=>{
+            let caja = document.getElementById('caja').value
+            let img = document.getElementById('img')
+            let p = document.getElementById('info')
+            let xhttp = new XMLHttpRequest()
+            xhttp.open("GET",`https://pokeapi.co/api/v2/pokemon/${caja}`)
+            xhttp.send()
 
-		fetch(`https://pokeapi.co/api/v2/pokemon/${caja}`)
-		.then(function (response){
-			response.json()
-			.then(function (pokemon){
-				crearPokemon(pokemon)
-			})
-		})
-	}
+            xhttp.onreadystatechange=function () {
+                if(this.readyState==4 && this.status==200)
+                {
+                let datoPokemon=JSON.parse( this.responseText)
+                console.log(datoPokemon)
+                img.setAttribute("src",datoPokemon.sprites.front_default)
+                p.textContent=datoPokemon.name
+                }
+                else{
+                	img.setAttribute("src","img1.freepng.es/20180317/xzq/kisspng-no-symbol-equals-sign-computer-icons-clip-art-prohibited-sign-5aad4b11ad3c37.6858572115213063857096.jpg")
+                	p.textContent=`Pokémon no encontrado`
+                }
+            }
 
-	function crearPokemon(pokemon){
-		let item = lista.querySelector("#pokemon")
-
-		let imagen = item.getElementsByTagName("img")[0]
-
-		imagen.setAttribute("src", pokemon.sprites.front_default)
-
-		let nombre = item.getElementsByTagName("p")[0]
-		nombre.textContent = pokemon.name
-	}
-
-	boton.addEventListener('click', ()=>{
-		consultarPokemon()
-	})
+        })
 
 	</script>
 </body>
