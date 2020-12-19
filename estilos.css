@@ -35,8 +35,8 @@ height: 100px;
    margin-bottom: -30px;
 }
 .pokemon{
-   width: 150px;
-   height: 150px;
+   width: 50%;
+   height: : 50%;
    margin: 40px auto;
    display: inline-block;
 }
@@ -44,7 +44,8 @@ height: 100px;
 p{
 	font-family: 'Sansita', sans-serif;
    margin-top: -60px;
-   color: white}
+   color: white;
+	font-size: 3vh;}
 
 .button {
 	font-family: 'Sansita', sans-serif;
