@@ -31,15 +31,17 @@ height: 100px;
    text-align: center;
    align-self: center;
    width: 50vw;
+   max-width: 35vw;
+  font-size: 3vh;
 }
 .contenedor button{
-   margin-top: 20px;
-   margin-bottom: -30px;
+   margin-top: 5vh;
+   margin-bottom: auto;
 }
 .pokemon{
    width: 50%;
    height: : 50%;
-   margin: 40px auto;
+   margin: auto;
    display: inline-block;
 }
 
