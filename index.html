@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
 	<!--FUENTES-->
@@ -15,17 +15,17 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Pokémon</title>
+	<title>Busca tu pokémon</title>
 	<link rel="stylesheet" type="text/css" href="estilos.css">
 </head>
 <body>
 
 	<div>
-		<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/500px-International_Pok%C3%A9mon_logo.svg.png" class="logo" alt="">
+		<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/500px-International_Pok%C3%A9mon_logo.svg.png" class="logo" alt="Logo Pokémon">
 		<div class="contenedor">
 		    <input type="text" id="caja" placeholder="Ingrese un pokemon">
 		    <button class="button" id="button">Buscar</button>
-		    <img src="./" id="img" class="pokemon" alt="">
+		    <img src="https://www.latercera.com/resizer/CBmGvvFEACkiaL4Diatt7wyUqlM=/900x600/smart/arc-anglerfish-arc2-prod-copesa.s3.amazonaws.com/public/LUOOHUM2OVEEXG7ZTRSNI6XWLY.png" id="img" class="pokemon" alt="Imagen del pokémon buscado">
 		    <p id="info" class="text-white"></p>
 		</div>
 	</div>
@@ -53,7 +53,7 @@
                 }
                 else{
                 	img.setAttribute("src","https://www.latercera.com/resizer/CBmGvvFEACkiaL4Diatt7wyUqlM=/900x600/smart/arc-anglerfish-arc2-prod-copesa.s3.amazonaws.com/public/LUOOHUM2OVEEXG7ZTRSNI6XWLY.png")
-                	p.textContent=`No encontrado`
+                	p.textContent=`No encontrado, prueba otra vez`
                 }
             }
 
