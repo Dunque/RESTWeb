@@ -20,45 +20,27 @@
 </head>
 <body>
 
-	<div>
-		<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/500px-International_Pok%C3%A9mon_logo.svg.png" class="logo" alt="Logo Pokémon">
-		<div class="contenedor">
-		    <input type="text" id="caja" placeholder="Ingrese un pokemon">
-		    <button class="button" id="button">Buscar</button>
+	<div class="wrapper">
+
+	    <div class=arriba>
+	     	<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/500px-International_Pok%C3%A9mon_logo.svg.png" class="logo" alt="Logo Pokémon">  
+	    </div>
+
+	    <div class=centro>
+	    	<input id="caja" placeholder="Ingrese un pokemon" list="pokedex">
+	        <datalist id="pokedex"></datalist>
+			<button class="button" id="button">Buscar</button>     
+	    </div>
+
+	    <div class=abajo>
 		    <img src="https://www.latercera.com/resizer/CBmGvvFEACkiaL4Diatt7wyUqlM=/900x600/smart/arc-anglerfish-arc2-prod-copesa.s3.amazonaws.com/public/LUOOHUM2OVEEXG7ZTRSNI6XWLY.png" id="img" class="pokemon" alt="Imagen del pokémon buscado">
 		    <p id="info" class="text-white"></p>
-		</div>
+		    <p class="poketipos" id="tipos"></p>
+	    </div>
+
 	</div>
+	
 
-	<script>
-		
-
-		let buton = document.getElementById('button')
-
-        buton.addEventListener('click',()=>{
-            let caja = document.getElementById('caja').value
-            let img = document.getElementById('img')
-            let p = document.getElementById('info')
-            let xhttp = new XMLHttpRequest()
-            xhttp.open("GET",`https://pokeapi.co/api/v2/pokemon/${caja}`)
-            xhttp.send()
-
-            xhttp.onreadystatechange=function () {
-                if(this.readyState==4 && this.status==200)
-                {
-                let datoPokemon=JSON.parse( this.responseText)
-                console.log(datoPokemon)
-                img.setAttribute("src",datoPokemon.sprites.front_default)
-                p.textContent=datoPokemon.name
-                }
-                else{
-                	img.setAttribute("src","https://www.latercera.com/resizer/CBmGvvFEACkiaL4Diatt7wyUqlM=/900x600/smart/arc-anglerfish-arc2-prod-copesa.s3.amazonaws.com/public/LUOOHUM2OVEEXG7ZTRSNI6XWLY.png")
-                	p.textContent=`No encontrado, prueba otra vez`
-                }
-            }
-
-        })
-
-	</script>
+	<script src="script.js"></script>
 </body>
 </html>

@@ -8,15 +8,30 @@ body {
 	font-family: 'Sansita', sans-serif;
 	text-align: center;
 }
-
-.logo{
-display: flex;
-margin: auto;
-margin-bottom: 10vh	;
-width: 250px;
-height: 100px;
+.arriba{
+	display: flex;
+	margin: auto;
+	margin-bottom: 10vh	;
+	width: 250px;
+	height: 100px;
 }
-.contenedor{
+.centro input{
+	display: flex;
+	font-family: 'Sansita', sans-serif;
+   	text-align: center;
+   	margin-left: auto;
+  	margin-right: auto;
+   	width: 50vw;
+  	max-width: 35vw;
+  	font-size: 3vh;
+}
+
+.centro button{
+   margin-top: 5vh;
+   margin-bottom: auto;
+}
+
+.abajo {
    text-align: center;
    margin: 0 auto;
    height: 300px;
@@ -26,30 +41,25 @@ height: 100px;
    align-content: center;
    flex-direction: column;
 }
-.contenedor input{
-	font-family: 'Sansita', sans-serif;
-   text-align: center;
-   align-self: center;
-   width: 50vw;
-   max-width: 35vw;
-  font-size: 3vh;
-}
-.contenedor button{
-   margin-top: 5vh;
-   margin-bottom: auto;
-}
+
 .pokemon{
-   width: 50%;
-   height: : 50%;
-   margin: auto;
+
+  	margin-left: auto;
+  	margin-right: auto;
+	margin-top: 1vh;
+	margin-bottom: 1vh;
+   	width: 50%;
+
+
    display: inline-block;
 }
 
-p{
+p {
 	font-family: 'Sansita', sans-serif;
-   margin-top: -1vh;
-   color: white;
-	font-size: 3vh;}
+  	margin-top: -1vh;
+   	color: white;
+	font-size: 3vh;
+}
 
 .button {
 	font-family: 'Sansita', sans-serif;
@@ -62,7 +72,6 @@ p{
   display: flex;
   margin-right: auto;
   margin-left: auto;
-  margin-bottom: 2vh;
   font-size: 3vh;
   cursor: pointer;
 }
