@@ -16,48 +16,45 @@ body {
 	height: 100px;
 }
 .centro input{
-	display: flex;
+  display: flex;
 	font-family: 'Sansita', sans-serif;
-   	text-align: center;
-   	margin-left: auto;
-  	margin-right: auto;
-   	width: 50vw;
-  	max-width: 35vw;
-  	font-size: 3vh;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50vw;
+  max-width: 35vw;
+  font-size: 3vh;
 }
 
 .centro button{
-   margin-top: 5vh;
-   margin-bottom: auto;
+  margin-top: 5vh;
+  margin-bottom: auto;
 }
 
 .abajo {
-   text-align: center;
-   margin: 0 auto;
-   height: 300px;
-   width: 350px;
-   display: flex;
-   justify-content: center;
-   align-content: center;
-   flex-direction: column;
+  text-align: center;
+  margin: 0 auto;
+  height: 300px;
+  width: 350px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
 }
 
 .pokemon{
-
-  	margin-left: auto;
-  	margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
 	margin-top: 1vh;
 	margin-bottom: 1vh;
-   	width: 50%;
-
-
-   display: inline-block;
+  width: 50%;
+  display: inline-block;
 }
 
 p {
 	font-family: 'Sansita', sans-serif;
-  	margin-top: -1vh;
-   	color: white;
+  margin-top: -1vh;
+  color: white;
 	font-size: 3vh;
 }
 
@@ -78,5 +75,4 @@ p {
 
 .button:hover {
 	background-color: #FF0000;
-
 }
